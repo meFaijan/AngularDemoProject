@@ -1,0 +1,334 @@
+﻿@model AngularDemoProject.Models.student_info
+
+<div class="form-horizontal">
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <div class="form-group">
+        @Html.LabelFor(model => model.grade_no,"Grade No.", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-4">
+            @Html.EditorFor(model => model.grade_no, new { htmlAttributes = new { @class = "form-control", @ng_model = "grade_no" } })
+            @Html.ValidationMessageFor(model => model.grade_no, "", new { @class = "text-danger" })
+        </div>
+
+        @Html.LabelFor(model => model.Admin_date,"Admit Date", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-4">
+            @Html.EditorFor(model => model.Admin_date, new { htmlAttributes = new { @class = "form-control datepicker", @ng_model = "Admin_date" } })
+            @Html.ValidationMessageFor(model => model.Admin_date, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.first_name,"First Name", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-4">
+            @Html.EditorFor(model => model.first_name, new { htmlAttributes = new { @class = "form-control", @ng_model = "first_name" } })
+            @Html.ValidationMessageFor(model => model.first_name, "", new { @class = "text-danger" })
+        </div>
+
+        @Html.LabelFor(model => model.middle_name,"Middle Name", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-4">
+            @Html.EditorFor(model => model.middle_name, new { htmlAttributes = new { @class = "form-control", @ng_model = "middle_name" } })
+            @Html.ValidationMessageFor(model => model.middle_name, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.last_name,"Last Name", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-4">
+            @Html.EditorFor(model => model.last_name, new { htmlAttributes = new { @class = "form-control", @ng_model = "last_name" } })
+            @Html.ValidationMessageFor(model => model.last_name, "", new { @class = "text-danger" })
+        </div>
+
+        @Html.LabelFor(model => model.gender_id, "Gender", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-4">
+            <select class="form-control search-select" ng-model="gender_id" ng-options="gender.id as gender.title for gender in Genders track by gender.id" ng-change="GetGenderValue()"></select>
+            @*@Html.DropDownList("gender_id", null, "Select", htmlAttributes: new { @class = "form-control search-select", @ng_model = "gender_id" })*@
+            @Html.ValidationMessageFor(model => model.gender_id, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.birth_date,"Birth Date", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-4">
+            @Html.EditorFor(model => model.birth_date, new { htmlAttributes = new { @class = "form-control datepicker", @ng_model = "birth_date" } })
+            @Html.ValidationMessageFor(model => model.birth_date, "", new { @class = "text-danger" })
+        </div>
+
+        @Html.LabelFor(model => model.religion_id, "Religion", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-4">
+            <select class="form-control search-select" ng-model="religion_id" ng-options="religion.id as religion.title for religion in Religions track by religion.id" ng-change="GetReligionValue()"></select>
+            @*@Html.DropDownList("religion_id", null, "Select", htmlAttributes: new { @class = "form-control search-select", @ng_model = "religion_id" })*@
+            @Html.ValidationMessageFor(model => model.religion_id, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.category_id, "Category", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-4">
+            <select class="form-control search-select" ng-model="category_id" ng-options="category.id as category.title for category in Categories track by category.id" ng-change="GetCategoryValue()"></select>
+            @*@Html.DropDownList("category_id", null, "Select", htmlAttributes: new { @class = "form-control search-select", @ng_model = "category_id" })*@
+            @Html.ValidationMessageFor(model => model.category_id, "", new { @class = "text-danger" })
+        </div>
+
+        @Html.LabelFor(model => model.nationality,"Nationality", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-4">
+            @Html.EditorFor(model => model.nationality, new { htmlAttributes = new { @class = "form-control", @ng_model = "nationality" } })
+            @Html.ValidationMessageFor(model => model.nationality, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.blood_group,"Blood Group", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-4">
+            @Html.EditorFor(model => model.blood_group, new { htmlAttributes = new { @class = "form-control", @ng_model = "blood_group" } })
+            @Html.ValidationMessageFor(model => model.blood_group, "", new { @class = "text-danger" })
+        </div>
+
+        @Html.LabelFor(model => model.contact_no,"Contact No", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-4">
+            @Html.EditorFor(model => model.contact_no, new { htmlAttributes = new { @class = "form-control", @ng_model = "contact_no" } })
+            @Html.ValidationMessageFor(model => model.contact_no, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.email,"Email", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-4">
+            @Html.EditorFor(model => model.email, new { htmlAttributes = new { @class = "form-control", @ng_model = "email" } })
+            @Html.ValidationMessageFor(model => model.email, "", new { @class = "text-danger" })
+        </div>
+
+        @Html.LabelFor(model => model.mother_tongue,"Mother Tongue", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-4">
+            @Html.EditorFor(model => model.mother_tongue, new { htmlAttributes = new { @class = "form-control", @ng_model = "mother_tongue" } })
+            @Html.ValidationMessageFor(model => model.mother_tongue, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.height,"Height", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-4">
+            @Html.EditorFor(model => model.height, new { htmlAttributes = new { @class = "form-control", @ng_model = "height" } })
+            @Html.ValidationMessageFor(model => model.height, "", new { @class = "text-danger" })
+        </div>
+
+        @Html.LabelFor(model => model.weight,"Weight", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-4">
+            @Html.EditorFor(model => model.weight, new { htmlAttributes = new { @class = "form-control", @ng_model = "weight" } })
+            @Html.ValidationMessageFor(model => model.weight, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.physical_disability,"Physical Disability", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-4">
+            <div class="checkbox">
+                <input type="checkbox" data-toggle="toggle" data-on="Yes" data-off="No" data-onstyle="success" data-offstyle="danger" ng-model="physical_disability" name="physical_disability" value="true" form-control @(Model != null && Model.physical_disability ? "checked" : "")>
+                @Html.ValidationMessageFor(model => model.physical_disability, "", new { @class = "text-danger" })
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.image_name,"Photo", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-4">
+            @if (Model != null && Model.image_name != null)
+            {
+                <a target="_blank" href="@Url.Content(Model.image_path + "/" + Model.image_name)">
+                    <img src="@Url.Content(Model.image_path + "/" + Model.image_name)" alt="file name" height="70" />
+                </a>
+            }
+            <input type="file" class="form-control" ngf-select="UploadPhotoSelectedFile($files)" />
+            @Html.ValidationMessageFor(model => model.image_name, "", new { @class = "text-danger" })
+        </div>
+
+        @Html.LabelFor(model => model.sign_name,"Signature", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-4">
+            @if (Model != null && Model.sign_name != null)
+            {
+                <a target="_blank" href="@Url.Content(Model.sign_path + "/" + Model.sign_name)">
+                    <img src="@Url.Content(Model.sign_path + "/" + Model.sign_name)" alt="file name" height="70" />
+                </a>
+            }
+            <input type="file" ngf-select="UploadSignatureSelectedFile($files)" class="form-control" />
+            @Html.ValidationMessageFor(model => model.sign_name, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+
+    <div class="panel panel-info">
+        <div class="panel panel-heading">Relatives Details</div>
+        <div class="panel-body">
+            <table class="table table-striped table-bordered table-hover" id="StudentRelativeInfoID" data-template="StudentRelativeInfo">
+                <thead>
+                    <tr>
+                        <th>Class/Section</th>
+                        <th>Student Name</th>
+                        <th>Relation</th>
+                        <th>Remarks</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tr>
+                    <td>
+                        <select class="form-control search-select" ng-model="class_id" ng-options="class.id as class.title for class in ClassDetails track by class.id" ng-change="GetClassValue()"></select>
+                        @*@Html.DropDownList("class_id", null, "--Select--", htmlAttributes: new { @class = "form-control search-select", @ng_model = "class_id" })*@
+                    </td>
+                    <td>
+                        <select class="form-control search-select" ng-model="student_id" ng-options="student.id as student.FullName for student in StudentList track by student.id" ng-change="GetStudentValue()"></select>
+                        @*@Html.DropDownList("student_id", null, "--Select--", htmlAttributes: new { @class = "form-control search-select", @ng_model = "student_id" })*@
+                    </td>
+                    <td>
+                        <input type="text" class="form-control" ng-model="relation" />
+                    </td>
+                    <td>
+                        <input type="text" class="form-control" ng-model="remarks" />
+                    </td>
+                    <td>
+                        <a class="btn btn-green btn-sm" ng-click="AddRelativeDetails()">
+                            <i class="fa fa-plus"></i> Add
+                        </a>
+                    </td>
+                </tr>
+                <tbody ng-repeat="data in student_relatives_details">
+                    <tr>
+                        <td>{{data.ClassName}}</td>
+                        <td>{{data.StudentName}}</td>
+                        <td>{{data.relation}}</td>
+                        <td>{{data.remarks}}</td>
+                        <td>
+                            <a class="btn btn-red btn-xs" ng-click="RemoveRelativeDetails($index)">
+                                <i class="fa fa-times"></i> Remove
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="panel panel-info">
+        <div class="panel panel-heading">Previous Academic Details</div>
+        <div class="panel-body">
+            <table class="table table-striped table-bordered table-hover" id="AcademicDetailsID" data-template="AcademicDetails">
+                <thead>
+                    <tr>
+                        <th>Class</th>
+                        <th>Exam</th>
+                        <th>Passout Year</th>
+                        <th>Symbol No.</th>
+                        <th>Obtained Marks</th>
+                        <th>Obtained (%)</th>
+                        <th>Division</th>
+                        <th>GPA</th>
+                        <th>School/College</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tr>
+                    <td>
+                        <input type="text" class="form-control" ng-model="class" />
+                    </td>
+                    <td>
+                        <input type="text" class="form-control" ng-model="exam" />
+                    </td>
+                    <td>
+                        <input type="text" class="form-control" ng-model="passout_year" />
+                    </td>
+                    <td>
+                        <input type="text" class="form-control" ng-model="symbol_no" />
+                    </td>
+                    <td>
+                        <input type="text" class="form-control number" ng-model="obtained_marks" />
+                    </td>
+                    <td>
+                        <input type="text" class="form-control number" ng-model="obtained_percent" />
+                    </td>
+                    <td>
+                        <input type="text" class="form-control" ng-model="division" />
+                    </td>
+                    <td>
+                        <input type="text" class="form-control number" ng-model="gpa" />
+                    </td>
+                    <td>
+                        <input type="text" class="form-control" ng-model="school_college_name" />
+                    </td>
+                    <td>
+                        <a class="btn btn-green btn-sm" ng-click="AddAcademicDetail()">
+                            <i class="fa fa-plus"></i> Add
+                        </a>
+                    </td>
+                </tr>
+                <tbody ng-repeat="data in academic_detail">
+                    <tr>
+                        <td>{{data.class}}</td>
+                        <td>{{data.exam}}</td>
+                        <td>{{data.passout_year}}</td>
+                        <td>{{data.symbol_no}}</td>
+                        <td>{{data.obtained_marks}}</td>
+                        <td>{{data.obtained_percent}}</td>
+                        <td>{{data.division}}</td>
+                        <td>{{data.gpa}}</td>
+                        <td>{{data.school_college_name}}</td>
+                        <td>
+                            <a class="btn btn-red btn-xs" ng-click="RemoveAcademicDetail($index)">
+                                <i class="fa fa-times"></i> Remove
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+
+    <div class="panel panel-info">
+        <div class="panel panel-heading">Document</div>
+        <div class="panel-body">
+            <table class="table table-striped table-bordered table-hover" id="StudentDocumentID" data-template="StudentDocument">
+                <thead>
+                    <tr>
+                        <th>Type of Document</th>
+                        <th>Attach Document</th>
+                        <th>Description</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tr>
+                    <td>
+                        <select class="form-control search-select" ng-model="document_type_id" ng-options="document.id as document.title for document in DocumentTypes track by document.id" ng-change="GetDocumentTypeValue()"></select>
+                        @*@Html.DropDownList("document_type_id", null, "--Select--", htmlAttributes: new { @class = "form-control search-select", @ng_model = "document_type_id" })*@
+                    </td>
+                    <td>
+                        <input type="file" class="form-control" ngf-select="UploadFiles($files)" />
+                    </td>
+                    <td>
+                        <input type="text" class="form-control" ng-model="description" />
+                    </td>
+                    <td>
+                        <a class="btn btn-green btn-sm" ng-click="AddStudentDocument()">
+                            <i class="fa fa-plus"></i> Add
+                        </a>
+                    </td>
+                </tr>
+                <tbody ng-repeat="data in student_documents">
+                    <tr>
+                        <td>{{data.document_type_name}}</td>
+                        <td>{{data.SelectedFileName}}</td>
+                        <td>{{data.description}}</td>
+                        <td>
+                            <a class="btn btn-red btn-xs" ng-click="RemoveStudentDocument($index)">
+                                <i class="fa fa-times"></i> Remove
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        <div class="pull-right col-md-1">
+            <input type="submit" value="Save" ng-click="SaveData()" class="btn btn-success" />
+        </div>
+    </div>
+</div>

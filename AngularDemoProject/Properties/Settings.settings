@@ -1,0 +1,15 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="AngularDemoProject.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="StudentFilePath" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">~/uploads/StudentPhoto</Value>
+    </Setting>
+    <Setting Name="StudentSignPath" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">~/uploads/StudentSignature</Value>
+    </Setting>
+    <Setting Name="DocumentPath" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">~/uploads/Documents</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

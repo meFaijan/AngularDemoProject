@@ -1,0 +1,695 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="demo_projectModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="academic_detail">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="student_id" Type="int" Nullable="false" />
+          <Property Name="class" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="exam" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="passout_year" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="symbol_no" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="obtained_marks" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="obtained_percent" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="division" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="gpa" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="school_college_name" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="category">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="title" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="class_details">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="title" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="document_type">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="title" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="gender">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="title" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="login_details">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="username" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="email" Type="nvarchar" MaxLength="255" />
+          <Property Name="password" Type="nvarchar" MaxLength="255" Nullable="false" />
+        </EntityType>
+        <EntityType Name="login_year_type">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="title" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="religion">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="title" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="student_documents">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="student_id" Type="int" Nullable="false" />
+          <Property Name="document_type_id" Type="int" Nullable="false" />
+          <Property Name="file_path" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="file_name" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="description" Type="nvarchar" MaxLength="255" Nullable="false" />
+        </EntityType>
+        <EntityType Name="student_info">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="grade_no" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="Admin_date" Type="datetime" Nullable="false" />
+          <Property Name="first_name" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="middle_name" Type="nvarchar" MaxLength="255" />
+          <Property Name="last_name" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="gender_id" Type="int" Nullable="false" />
+          <Property Name="birth_date" Type="datetime" />
+          <Property Name="religion_id" Type="int" />
+          <Property Name="category_id" Type="int" />
+          <Property Name="nationality" Type="nvarchar" MaxLength="255" />
+          <Property Name="blood_group" Type="nvarchar" MaxLength="255" />
+          <Property Name="contact_no" Type="nvarchar" MaxLength="255" />
+          <Property Name="email" Type="nvarchar" MaxLength="255" />
+          <Property Name="mother_tongue" Type="nvarchar" MaxLength="255" />
+          <Property Name="height" Type="nvarchar" MaxLength="255" />
+          <Property Name="weight" Type="nvarchar" MaxLength="255" />
+          <Property Name="physical_disability" Type="bit" Nullable="false" />
+          <Property Name="image_path" Type="nvarchar" MaxLength="255" />
+          <Property Name="image_name" Type="nvarchar" MaxLength="255" />
+          <Property Name="sign_path" Type="nvarchar" MaxLength="255" />
+          <Property Name="sign_name" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="student_relatives_details">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="class_id" Type="int" Nullable="false" />
+          <Property Name="student_id" Type="int" Nullable="false" />
+          <Property Name="relation" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="remarks" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <Association Name="FK__academic___stude__49C3F6B7">
+          <End Role="student_info" Type="Self.student_info" Multiplicity="1" />
+          <End Role="academic_detail" Type="Self.academic_detail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="student_info">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="academic_detail">
+              <PropertyRef Name="student_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__student_d__docum__4D94879B">
+          <End Role="document_type" Type="Self.document_type" Multiplicity="1" />
+          <End Role="student_documents" Type="Self.student_documents" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="document_type">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="student_documents">
+              <PropertyRef Name="document_type_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__student_d__stude__4CA06362">
+          <End Role="student_info" Type="Self.student_info" Multiplicity="1" />
+          <End Role="student_documents" Type="Self.student_documents" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="student_info">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="student_documents">
+              <PropertyRef Name="student_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__student_i__categ__4316F928">
+          <End Role="category" Type="Self.category" Multiplicity="0..1" />
+          <End Role="student_info" Type="Self.student_info" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="category">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="student_info">
+              <PropertyRef Name="category_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__student_i__gende__412EB0B6">
+          <End Role="gender" Type="Self.gender" Multiplicity="1" />
+          <End Role="student_info" Type="Self.student_info" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="gender">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="student_info">
+              <PropertyRef Name="gender_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__student_i__relig__4222D4EF">
+          <End Role="religion" Type="Self.religion" Multiplicity="0..1" />
+          <End Role="student_info" Type="Self.student_info" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="religion">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="student_info">
+              <PropertyRef Name="religion_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__student_r__class__45F365D3">
+          <End Role="class_details" Type="Self.class_details" Multiplicity="1" />
+          <End Role="student_relatives_details" Type="Self.student_relatives_details" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="class_details">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="student_relatives_details">
+              <PropertyRef Name="class_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__student_r__stude__46E78A0C">
+          <End Role="student_info" Type="Self.student_info" Multiplicity="1" />
+          <End Role="student_relatives_details" Type="Self.student_relatives_details" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="student_info">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="student_relatives_details">
+              <PropertyRef Name="student_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="demo_projectModelStoreContainer">
+          <EntitySet Name="academic_detail" EntityType="Self.academic_detail" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="category" EntityType="Self.category" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="class_details" EntityType="Self.class_details" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="document_type" EntityType="Self.document_type" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="gender" EntityType="Self.gender" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="login_details" EntityType="Self.login_details" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="login_year_type" EntityType="Self.login_year_type" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="religion" EntityType="Self.religion" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="student_documents" EntityType="Self.student_documents" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="student_info" EntityType="Self.student_info" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="student_relatives_details" EntityType="Self.student_relatives_details" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__academic___stude__49C3F6B7" Association="Self.FK__academic___stude__49C3F6B7">
+            <End Role="student_info" EntitySet="student_info" />
+            <End Role="academic_detail" EntitySet="academic_detail" />
+          </AssociationSet>
+          <AssociationSet Name="FK__student_d__docum__4D94879B" Association="Self.FK__student_d__docum__4D94879B">
+            <End Role="document_type" EntitySet="document_type" />
+            <End Role="student_documents" EntitySet="student_documents" />
+          </AssociationSet>
+          <AssociationSet Name="FK__student_d__stude__4CA06362" Association="Self.FK__student_d__stude__4CA06362">
+            <End Role="student_info" EntitySet="student_info" />
+            <End Role="student_documents" EntitySet="student_documents" />
+          </AssociationSet>
+          <AssociationSet Name="FK__student_i__categ__4316F928" Association="Self.FK__student_i__categ__4316F928">
+            <End Role="category" EntitySet="category" />
+            <End Role="student_info" EntitySet="student_info" />
+          </AssociationSet>
+          <AssociationSet Name="FK__student_i__gende__412EB0B6" Association="Self.FK__student_i__gende__412EB0B6">
+            <End Role="gender" EntitySet="gender" />
+            <End Role="student_info" EntitySet="student_info" />
+          </AssociationSet>
+          <AssociationSet Name="FK__student_i__relig__4222D4EF" Association="Self.FK__student_i__relig__4222D4EF">
+            <End Role="religion" EntitySet="religion" />
+            <End Role="student_info" EntitySet="student_info" />
+          </AssociationSet>
+          <AssociationSet Name="FK__student_r__class__45F365D3" Association="Self.FK__student_r__class__45F365D3">
+            <End Role="class_details" EntitySet="class_details" />
+            <End Role="student_relatives_details" EntitySet="student_relatives_details" />
+          </AssociationSet>
+          <AssociationSet Name="FK__student_r__stude__46E78A0C" Association="Self.FK__student_r__stude__46E78A0C">
+            <End Role="student_info" EntitySet="student_info" />
+            <End Role="student_relatives_details" EntitySet="student_relatives_details" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="demo_projectModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="MainEntities" annotation:LazyLoadingEnabled="true" >
+          <EntitySet Name="academic_detail" EntityType="demo_projectModel.academic_detail" />
+          <EntitySet Name="categories" EntityType="demo_projectModel.category" />
+          <EntitySet Name="class_details" EntityType="demo_projectModel.class_details" />
+          <EntitySet Name="document_type" EntityType="demo_projectModel.document_type" />
+          <EntitySet Name="genders" EntityType="demo_projectModel.gender" />
+          <EntitySet Name="login_details" EntityType="demo_projectModel.login_details" />
+          <EntitySet Name="login_year_type" EntityType="demo_projectModel.login_year_type" />
+          <EntitySet Name="religions" EntityType="demo_projectModel.religion" />
+          <EntitySet Name="student_documents" EntityType="demo_projectModel.student_documents" />
+          <EntitySet Name="student_info" EntityType="demo_projectModel.student_info" />
+          <EntitySet Name="student_relatives_details" EntityType="demo_projectModel.student_relatives_details" />
+          <AssociationSet Name="FK__academic___stude__49C3F6B7" Association="demo_projectModel.FK__academic___stude__49C3F6B7">
+            <End Role="student_info" EntitySet="student_info" />
+            <End Role="academic_detail" EntitySet="academic_detail" />
+          </AssociationSet>
+          <AssociationSet Name="FK__student_i__categ__4316F928" Association="demo_projectModel.FK__student_i__categ__4316F928">
+            <End Role="category" EntitySet="categories" />
+            <End Role="student_info" EntitySet="student_info" />
+          </AssociationSet>
+          <AssociationSet Name="FK__student_r__class__45F365D3" Association="demo_projectModel.FK__student_r__class__45F365D3">
+            <End Role="class_details" EntitySet="class_details" />
+            <End Role="student_relatives_details" EntitySet="student_relatives_details" />
+          </AssociationSet>
+          <AssociationSet Name="FK__student_d__docum__4D94879B" Association="demo_projectModel.FK__student_d__docum__4D94879B">
+            <End Role="document_type" EntitySet="document_type" />
+            <End Role="student_documents" EntitySet="student_documents" />
+          </AssociationSet>
+          <AssociationSet Name="FK__student_i__gende__412EB0B6" Association="demo_projectModel.FK__student_i__gende__412EB0B6">
+            <End Role="gender" EntitySet="genders" />
+            <End Role="student_info" EntitySet="student_info" />
+          </AssociationSet>
+          <AssociationSet Name="FK__student_i__relig__4222D4EF" Association="demo_projectModel.FK__student_i__relig__4222D4EF">
+            <End Role="religion" EntitySet="religions" />
+            <End Role="student_info" EntitySet="student_info" />
+          </AssociationSet>
+          <AssociationSet Name="FK__student_d__stude__4CA06362" Association="demo_projectModel.FK__student_d__stude__4CA06362">
+            <End Role="student_info" EntitySet="student_info" />
+            <End Role="student_documents" EntitySet="student_documents" />
+          </AssociationSet>
+          <AssociationSet Name="FK__student_r__stude__46E78A0C" Association="demo_projectModel.FK__student_r__stude__46E78A0C">
+            <End Role="student_info" EntitySet="student_info" />
+            <End Role="student_relatives_details" EntitySet="student_relatives_details" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="academic_detail">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="student_id" Type="Int32" Nullable="false" />
+          <Property Name="class" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="exam" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="passout_year" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="symbol_no" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="obtained_marks" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="obtained_percent" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="division" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="gpa" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="school_college_name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="student_info" Relationship="demo_projectModel.FK__academic___stude__49C3F6B7" FromRole="academic_detail" ToRole="student_info" />
+        </EntityType>
+        <EntityType Name="category">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="title" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="student_info" Relationship="demo_projectModel.FK__student_i__categ__4316F928" FromRole="category" ToRole="student_info" />
+        </EntityType>
+        <EntityType Name="class_details">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="title" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="student_relatives_details" Relationship="demo_projectModel.FK__student_r__class__45F365D3" FromRole="class_details" ToRole="student_relatives_details" />
+        </EntityType>
+        <EntityType Name="document_type">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="title" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="student_documents" Relationship="demo_projectModel.FK__student_d__docum__4D94879B" FromRole="document_type" ToRole="student_documents" />
+        </EntityType>
+        <EntityType Name="gender">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="title" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="student_info" Relationship="demo_projectModel.FK__student_i__gende__412EB0B6" FromRole="gender" ToRole="student_info" />
+        </EntityType>
+        <EntityType Name="login_details">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="username" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="email" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="password" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="login_year_type">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="title" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="religion">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="title" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="student_info" Relationship="demo_projectModel.FK__student_i__relig__4222D4EF" FromRole="religion" ToRole="student_info" />
+        </EntityType>
+        <EntityType Name="student_documents">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="student_id" Type="Int32" Nullable="false" />
+          <Property Name="document_type_id" Type="Int32" Nullable="false" />
+          <Property Name="file_path" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="file_name" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="description" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="document_type" Relationship="demo_projectModel.FK__student_d__docum__4D94879B" FromRole="student_documents" ToRole="document_type" />
+          <NavigationProperty Name="student_info" Relationship="demo_projectModel.FK__student_d__stude__4CA06362" FromRole="student_documents" ToRole="student_info" />
+        </EntityType>
+        <EntityType Name="student_info">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="grade_no" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Admin_date" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="first_name" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="middle_name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="last_name" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="gender_id" Type="Int32" Nullable="false" />
+          <Property Name="birth_date" Type="DateTime" Precision="3" />
+          <Property Name="religion_id" Type="Int32" />
+          <Property Name="category_id" Type="Int32" />
+          <Property Name="nationality" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="blood_group" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="contact_no" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="email" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="mother_tongue" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="height" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="weight" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="physical_disability" Type="Boolean" Nullable="false" />
+          <Property Name="image_path" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="image_name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="sign_path" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="sign_name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="academic_detail" Relationship="demo_projectModel.FK__academic___stude__49C3F6B7" FromRole="student_info" ToRole="academic_detail" />
+          <NavigationProperty Name="category" Relationship="demo_projectModel.FK__student_i__categ__4316F928" FromRole="student_info" ToRole="category" />
+          <NavigationProperty Name="gender" Relationship="demo_projectModel.FK__student_i__gende__412EB0B6" FromRole="student_info" ToRole="gender" />
+          <NavigationProperty Name="religion" Relationship="demo_projectModel.FK__student_i__relig__4222D4EF" FromRole="student_info" ToRole="religion" />
+          <NavigationProperty Name="student_documents" Relationship="demo_projectModel.FK__student_d__stude__4CA06362" FromRole="student_info" ToRole="student_documents" />
+          <NavigationProperty Name="student_relatives_details" Relationship="demo_projectModel.FK__student_r__stude__46E78A0C" FromRole="student_info" ToRole="student_relatives_details" />
+        </EntityType>
+        <EntityType Name="student_relatives_details">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="class_id" Type="Int32" Nullable="false" />
+          <Property Name="student_id" Type="Int32" Nullable="false" />
+          <Property Name="relation" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="remarks" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="class_details" Relationship="demo_projectModel.FK__student_r__class__45F365D3" FromRole="student_relatives_details" ToRole="class_details" />
+          <NavigationProperty Name="student_info" Relationship="demo_projectModel.FK__student_r__stude__46E78A0C" FromRole="student_relatives_details" ToRole="student_info" />
+        </EntityType>
+        <Association Name="FK__academic___stude__49C3F6B7">
+          <End Type="demo_projectModel.student_info" Role="student_info" Multiplicity="1" />
+          <End Type="demo_projectModel.academic_detail" Role="academic_detail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="student_info">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="academic_detail">
+              <PropertyRef Name="student_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__student_i__categ__4316F928">
+          <End Type="demo_projectModel.category" Role="category" Multiplicity="0..1" />
+          <End Type="demo_projectModel.student_info" Role="student_info" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="category">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="student_info">
+              <PropertyRef Name="category_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__student_r__class__45F365D3">
+          <End Type="demo_projectModel.class_details" Role="class_details" Multiplicity="1" />
+          <End Type="demo_projectModel.student_relatives_details" Role="student_relatives_details" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="class_details">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="student_relatives_details">
+              <PropertyRef Name="class_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__student_d__docum__4D94879B">
+          <End Type="demo_projectModel.document_type" Role="document_type" Multiplicity="1" />
+          <End Type="demo_projectModel.student_documents" Role="student_documents" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="document_type">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="student_documents">
+              <PropertyRef Name="document_type_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__student_i__gende__412EB0B6">
+          <End Type="demo_projectModel.gender" Role="gender" Multiplicity="1" />
+          <End Type="demo_projectModel.student_info" Role="student_info" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="gender">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="student_info">
+              <PropertyRef Name="gender_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__student_i__relig__4222D4EF">
+          <End Type="demo_projectModel.religion" Role="religion" Multiplicity="0..1" />
+          <End Type="demo_projectModel.student_info" Role="student_info" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="religion">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="student_info">
+              <PropertyRef Name="religion_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__student_d__stude__4CA06362">
+          <End Type="demo_projectModel.student_info" Role="student_info" Multiplicity="1" />
+          <End Type="demo_projectModel.student_documents" Role="student_documents" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="student_info">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="student_documents">
+              <PropertyRef Name="student_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__student_r__stude__46E78A0C">
+          <End Type="demo_projectModel.student_info" Role="student_info" Multiplicity="1" />
+          <End Type="demo_projectModel.student_relatives_details" Role="student_relatives_details" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="student_info">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="student_relatives_details">
+              <PropertyRef Name="student_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="demo_projectModelStoreContainer" CdmEntityContainer="MainEntities" >
+          <EntitySetMapping Name="academic_detail">
+            <EntityTypeMapping TypeName="demo_projectModel.academic_detail">
+              <MappingFragment StoreEntitySet="academic_detail">
+                <ScalarProperty Name="school_college_name" ColumnName="school_college_name" />
+                <ScalarProperty Name="gpa" ColumnName="gpa" />
+                <ScalarProperty Name="division" ColumnName="division" />
+                <ScalarProperty Name="obtained_percent" ColumnName="obtained_percent" />
+                <ScalarProperty Name="obtained_marks" ColumnName="obtained_marks" />
+                <ScalarProperty Name="symbol_no" ColumnName="symbol_no" />
+                <ScalarProperty Name="passout_year" ColumnName="passout_year" />
+                <ScalarProperty Name="exam" ColumnName="exam" />
+                <ScalarProperty Name="class" ColumnName="class" />
+                <ScalarProperty Name="student_id" ColumnName="student_id" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="categories">
+            <EntityTypeMapping TypeName="demo_projectModel.category">
+              <MappingFragment StoreEntitySet="category">
+                <ScalarProperty Name="title" ColumnName="title" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="class_details">
+            <EntityTypeMapping TypeName="demo_projectModel.class_details">
+              <MappingFragment StoreEntitySet="class_details">
+                <ScalarProperty Name="title" ColumnName="title" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="document_type">
+            <EntityTypeMapping TypeName="demo_projectModel.document_type">
+              <MappingFragment StoreEntitySet="document_type">
+                <ScalarProperty Name="title" ColumnName="title" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="genders">
+            <EntityTypeMapping TypeName="demo_projectModel.gender">
+              <MappingFragment StoreEntitySet="gender">
+                <ScalarProperty Name="title" ColumnName="title" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="login_details">
+            <EntityTypeMapping TypeName="demo_projectModel.login_details">
+              <MappingFragment StoreEntitySet="login_details">
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="username" ColumnName="username" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="login_year_type">
+            <EntityTypeMapping TypeName="demo_projectModel.login_year_type">
+              <MappingFragment StoreEntitySet="login_year_type">
+                <ScalarProperty Name="title" ColumnName="title" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="religions">
+            <EntityTypeMapping TypeName="demo_projectModel.religion">
+              <MappingFragment StoreEntitySet="religion">
+                <ScalarProperty Name="title" ColumnName="title" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="student_documents">
+            <EntityTypeMapping TypeName="demo_projectModel.student_documents">
+              <MappingFragment StoreEntitySet="student_documents">
+                <ScalarProperty Name="description" ColumnName="description" />
+                <ScalarProperty Name="file_name" ColumnName="file_name" />
+                <ScalarProperty Name="file_path" ColumnName="file_path" />
+                <ScalarProperty Name="document_type_id" ColumnName="document_type_id" />
+                <ScalarProperty Name="student_id" ColumnName="student_id" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="student_info">
+            <EntityTypeMapping TypeName="demo_projectModel.student_info">
+              <MappingFragment StoreEntitySet="student_info">
+                <ScalarProperty Name="sign_name" ColumnName="sign_name" />
+                <ScalarProperty Name="sign_path" ColumnName="sign_path" />
+                <ScalarProperty Name="image_name" ColumnName="image_name" />
+                <ScalarProperty Name="image_path" ColumnName="image_path" />
+                <ScalarProperty Name="physical_disability" ColumnName="physical_disability" />
+                <ScalarProperty Name="weight" ColumnName="weight" />
+                <ScalarProperty Name="height" ColumnName="height" />
+                <ScalarProperty Name="mother_tongue" ColumnName="mother_tongue" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="contact_no" ColumnName="contact_no" />
+                <ScalarProperty Name="blood_group" ColumnName="blood_group" />
+                <ScalarProperty Name="nationality" ColumnName="nationality" />
+                <ScalarProperty Name="category_id" ColumnName="category_id" />
+                <ScalarProperty Name="religion_id" ColumnName="religion_id" />
+                <ScalarProperty Name="birth_date" ColumnName="birth_date" />
+                <ScalarProperty Name="gender_id" ColumnName="gender_id" />
+                <ScalarProperty Name="last_name" ColumnName="last_name" />
+                <ScalarProperty Name="middle_name" ColumnName="middle_name" />
+                <ScalarProperty Name="first_name" ColumnName="first_name" />
+                <ScalarProperty Name="Admin_date" ColumnName="Admin_date" />
+                <ScalarProperty Name="grade_no" ColumnName="grade_no" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="student_relatives_details">
+            <EntityTypeMapping TypeName="demo_projectModel.student_relatives_details">
+              <MappingFragment StoreEntitySet="student_relatives_details">
+                <ScalarProperty Name="remarks" ColumnName="remarks" />
+                <ScalarProperty Name="relation" ColumnName="relation" />
+                <ScalarProperty Name="student_id" ColumnName="student_id" />
+                <ScalarProperty Name="class_id" ColumnName="class_id" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

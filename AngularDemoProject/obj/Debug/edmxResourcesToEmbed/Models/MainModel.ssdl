@@ -1,0 +1,259 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="demo_projectModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="academic_detail">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="student_id" Type="int" Nullable="false" />
+    <Property Name="class" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="exam" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="passout_year" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="symbol_no" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="obtained_marks" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="obtained_percent" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="division" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="gpa" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="school_college_name" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="category">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="title" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="class_details">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="title" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="document_type">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="title" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="gender">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="title" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="login_details">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="username" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="email" Type="nvarchar" MaxLength="255" />
+    <Property Name="password" Type="nvarchar" MaxLength="255" Nullable="false" />
+  </EntityType>
+  <EntityType Name="login_year_type">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="title" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="religion">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="title" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="student_documents">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="student_id" Type="int" Nullable="false" />
+    <Property Name="document_type_id" Type="int" Nullable="false" />
+    <Property Name="file_path" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="file_name" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="description" Type="nvarchar" MaxLength="255" Nullable="false" />
+  </EntityType>
+  <EntityType Name="student_info">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="grade_no" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="Admin_date" Type="datetime" Nullable="false" />
+    <Property Name="first_name" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="middle_name" Type="nvarchar" MaxLength="255" />
+    <Property Name="last_name" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="gender_id" Type="int" Nullable="false" />
+    <Property Name="birth_date" Type="datetime" />
+    <Property Name="religion_id" Type="int" />
+    <Property Name="category_id" Type="int" />
+    <Property Name="nationality" Type="nvarchar" MaxLength="255" />
+    <Property Name="blood_group" Type="nvarchar" MaxLength="255" />
+    <Property Name="contact_no" Type="nvarchar" MaxLength="255" />
+    <Property Name="email" Type="nvarchar" MaxLength="255" />
+    <Property Name="mother_tongue" Type="nvarchar" MaxLength="255" />
+    <Property Name="height" Type="nvarchar" MaxLength="255" />
+    <Property Name="weight" Type="nvarchar" MaxLength="255" />
+    <Property Name="physical_disability" Type="bit" Nullable="false" />
+    <Property Name="image_path" Type="nvarchar" MaxLength="255" />
+    <Property Name="image_name" Type="nvarchar" MaxLength="255" />
+    <Property Name="sign_path" Type="nvarchar" MaxLength="255" />
+    <Property Name="sign_name" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="student_relatives_details">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="class_id" Type="int" Nullable="false" />
+    <Property Name="student_id" Type="int" Nullable="false" />
+    <Property Name="relation" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="remarks" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <Association Name="FK__academic___stude__49C3F6B7">
+    <End Role="student_info" Type="Self.student_info" Multiplicity="1" />
+    <End Role="academic_detail" Type="Self.academic_detail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="student_info">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="academic_detail">
+        <PropertyRef Name="student_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__student_d__docum__4D94879B">
+    <End Role="document_type" Type="Self.document_type" Multiplicity="1" />
+    <End Role="student_documents" Type="Self.student_documents" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="document_type">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="student_documents">
+        <PropertyRef Name="document_type_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__student_d__stude__4CA06362">
+    <End Role="student_info" Type="Self.student_info" Multiplicity="1" />
+    <End Role="student_documents" Type="Self.student_documents" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="student_info">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="student_documents">
+        <PropertyRef Name="student_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__student_i__categ__4316F928">
+    <End Role="category" Type="Self.category" Multiplicity="0..1" />
+    <End Role="student_info" Type="Self.student_info" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="category">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="student_info">
+        <PropertyRef Name="category_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__student_i__gende__412EB0B6">
+    <End Role="gender" Type="Self.gender" Multiplicity="1" />
+    <End Role="student_info" Type="Self.student_info" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="gender">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="student_info">
+        <PropertyRef Name="gender_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__student_i__relig__4222D4EF">
+    <End Role="religion" Type="Self.religion" Multiplicity="0..1" />
+    <End Role="student_info" Type="Self.student_info" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="religion">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="student_info">
+        <PropertyRef Name="religion_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__student_r__class__45F365D3">
+    <End Role="class_details" Type="Self.class_details" Multiplicity="1" />
+    <End Role="student_relatives_details" Type="Self.student_relatives_details" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="class_details">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="student_relatives_details">
+        <PropertyRef Name="class_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__student_r__stude__46E78A0C">
+    <End Role="student_info" Type="Self.student_info" Multiplicity="1" />
+    <End Role="student_relatives_details" Type="Self.student_relatives_details" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="student_info">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="student_relatives_details">
+        <PropertyRef Name="student_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="demo_projectModelStoreContainer">
+    <EntitySet Name="academic_detail" EntityType="Self.academic_detail" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="category" EntityType="Self.category" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="class_details" EntityType="Self.class_details" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="document_type" EntityType="Self.document_type" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="gender" EntityType="Self.gender" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="login_details" EntityType="Self.login_details" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="login_year_type" EntityType="Self.login_year_type" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="religion" EntityType="Self.religion" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="student_documents" EntityType="Self.student_documents" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="student_info" EntityType="Self.student_info" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="student_relatives_details" EntityType="Self.student_relatives_details" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__academic___stude__49C3F6B7" Association="Self.FK__academic___stude__49C3F6B7">
+      <End Role="student_info" EntitySet="student_info" />
+      <End Role="academic_detail" EntitySet="academic_detail" />
+    </AssociationSet>
+    <AssociationSet Name="FK__student_d__docum__4D94879B" Association="Self.FK__student_d__docum__4D94879B">
+      <End Role="document_type" EntitySet="document_type" />
+      <End Role="student_documents" EntitySet="student_documents" />
+    </AssociationSet>
+    <AssociationSet Name="FK__student_d__stude__4CA06362" Association="Self.FK__student_d__stude__4CA06362">
+      <End Role="student_info" EntitySet="student_info" />
+      <End Role="student_documents" EntitySet="student_documents" />
+    </AssociationSet>
+    <AssociationSet Name="FK__student_i__categ__4316F928" Association="Self.FK__student_i__categ__4316F928">
+      <End Role="category" EntitySet="category" />
+      <End Role="student_info" EntitySet="student_info" />
+    </AssociationSet>
+    <AssociationSet Name="FK__student_i__gende__412EB0B6" Association="Self.FK__student_i__gende__412EB0B6">
+      <End Role="gender" EntitySet="gender" />
+      <End Role="student_info" EntitySet="student_info" />
+    </AssociationSet>
+    <AssociationSet Name="FK__student_i__relig__4222D4EF" Association="Self.FK__student_i__relig__4222D4EF">
+      <End Role="religion" EntitySet="religion" />
+      <End Role="student_info" EntitySet="student_info" />
+    </AssociationSet>
+    <AssociationSet Name="FK__student_r__class__45F365D3" Association="Self.FK__student_r__class__45F365D3">
+      <End Role="class_details" EntitySet="class_details" />
+      <End Role="student_relatives_details" EntitySet="student_relatives_details" />
+    </AssociationSet>
+    <AssociationSet Name="FK__student_r__stude__46E78A0C" Association="Self.FK__student_r__stude__46E78A0C">
+      <End Role="student_info" EntitySet="student_info" />
+      <End Role="student_relatives_details" EntitySet="student_relatives_details" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

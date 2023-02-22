@@ -1,0 +1,529 @@
+﻿
+<!DOCTYPE html>
+<!-- Template Name: Rapido - Responsive Admin Template build with Twitter Bootstrap 3.x Version: 1.2 Author: ClipTheme -->
+<!--[if IE 8]><html class="ie8" lang="en"><![endif]-->
+<!--[if IE 9]><html class="ie9" lang="en"><![endif]-->
+<!--[if !IE]><!-->
+<html lang="en">
+<!--<![endif]-->
+<!-- start: HEAD -->
+<head>
+    <title>@ViewBag.Title</title>
+    <!-- start: META -->
+    <meta charset="utf-8" />
+    <!--[if IE]><meta http-equiv='X-UA-Compatible' content="IE=edge,IE=9,IE=8,chrome=1" /><![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta content="" name="description" />
+    <meta content="" name="author" />
+    <!-- end: META -->
+    <!-- start: MAIN CSS -->
+    <!--test Print-->
+    @* <link rel="stylesheet" type="text/css" media="print" href="print.css">*@
+    <!--end print-->
+    <link rel="stylesheet" href="@Url.Content("~/Content/assets/webfontkit-20200308-055314/stylesheet.css")" type="text/css" />
+    <link rel="stylesheet" href="@Url.Content("~/Content/assets/plugins/bootstrap/css/bootstrap.min.css")">
+    <link rel="stylesheet" href="@Url.Content("~/Content/assets/plugins/font-awesome/css/font-awesome.min.css")">
+    <link rel="stylesheet" href="@Url.Content("~/Content/assets/plugins/iCheck/skins/minimal/_all.css")">
+    <link rel="stylesheet" href="@Url.Content("~/Content/PreetiFonts/font-preeti.css")">
+    <link rel="stylesheet" href="@Url.Content("~/Content/assets/css/styles.css")" type="text/css">
+
+    <link rel="stylesheet" href="@Url.Content("~/Content/assets/plugins/perfect-scrollbar/src/perfect-scrollbar.css")">
+    <link rel="stylesheet" href="@Url.Content("~/Content/assets/plugins/animate.css/animate.min.css")">
+    <!-- end: MAIN CSS -->
+    <!-- start: CSS REQUIRED FOR SUBVIEW CONTENTS -->
+    <link rel="stylesheet" href="@Url.Content("~/Content/assets/plugins/owl-carousel/owl-carousel/owl.carousel.css")">
+    <link rel="stylesheet" href="@Url.Content("~/Content/assets/plugins/owl-carousel/owl-carousel/owl.theme.css")">
+    <link rel="stylesheet" href="@Url.Content("~/Content/assets/plugins/owl-carousel/owl-carousel/owl.transitions.css")">
+    <link rel="stylesheet" href="@Url.Content("~/Content/assets/plugins/summernote/summernote.min.css")">
+    <link rel="stylesheet" href="@Url.Content("~/Content/assets/plugins/fullcalendar/fullcalendar/fullcalendar.css")">
+
+    <link rel="stylesheet" href="@Url.Content("~/Content/assets/plugins/bootstrap-select/bootstrap-select.min.css")">
+    <link rel="stylesheet" href="@Url.Content("~/Content/assets/plugins/bootstrap-switch/dist/css/bootstrap3/bootstrap-switch.min.css")">
+    <link rel="stylesheet" href="@Url.Content("~/Content/assets/plugins/bootstrap-fileupload/bootstrap-fileupload.min.css")">
+    <link rel="stylesheet" href="@Url.Content("~/Content/assets/plugins/bootstrap-daterangepicker/daterangepicker-bs3.css")">
+    <link rel="stylesheet" href="@Url.Content("~/Content/assets/plugins/toggle/toggle.min.css")" />
+    <link rel="stylesheet" href="@Url.Content("~/Content/assets/plugins/select2/select2.min.css")" />
+    <link rel="stylesheet" href="@Url.Content("~/Content/assets/css/prabhucss.css")" />
+    <link rel="stylesheet" href="@Url.Content("~/Content/assets/plugins/datepicker/css/datepicker.css")" />
+    @*<link href="@Url.Content("~/Content/assets/plugins/bootstrap-datetimepicker/css/datetimepicker.css")" rel="stylesheet" />
+        <link href="@Url.Content("~/Content/assets/plugins/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css")" rel="stylesheet" />*@
+
+    <link rel="stylesheet" href="@Url.Content("~/Content/assets/plugins/NepaliDatePick/nepali.css")" />
+    <link rel="stylesheet" href="~/Content/bootstrap-iconpicker.min.css" />
+    <!-- end: CSS REQUIRED FOR THIS SUBVIEW CONTENTS-->
+    <!-- start: CSS REQUIRED FOR THIS PAGE ONLY -->
+    <!-- end: CSS REQUIRED FOR THIS PAGE ONLY -->
+    <!-- start: CORE CSS -->
+    <link rel="stylesheet" media="print" href="@Url.Content("~/Content/assets/css/print.css")">
+    <link rel="stylesheet" href="@Url.Content("~/Content/assets/css/styles-responsive.css")">
+    <link rel="stylesheet" href="@Url.Content("~/Content/assets/css/plugins.css")">
+    <link rel="stylesheet" href="@Url.Content("~/Content/assets/plugins/DataTables/media/css/DT_bootstrap.css")">
+    <link rel="stylesheet" href="@Url.Content("~/Content/assets/plugins/DataTables/media/css/fixedHeader.dataTables.min.css")">
+    <link rel="stylesheet" href="@Url.Content("~/Content/assets/plugins/jqueryFixedHeader/table-fixed-header.css")">
+    <link rel="stylesheet" href="@Url.Content("~/Content/assets/css/themes/theme-style8.css")" type="text/css" id="skin_color">
+    <link rel="stylesheet" href="@Url.Content("~/content/css/theme.css")" type="text/css">
+
+    <link href="~/Content/ModalCss.css" rel="stylesheet" />
+    @* <link rel="stylesheet" href="@Url.Content("~/Content/assets/css/print.css")" type="text/css" media="print">*@
+    <link rel="stylesheet" href="@Url.Content("~/Content/Site.css")" type="text/css">
+    <link rel="stylesheet" href="@Url.Content("~/Content/assets/css/fonts/raleway/stylesheet.css")" type="text/css">
+    <link href="~/Content/assets/css/password_strength/password_strength.css" rel="stylesheet" />
+    @Scripts.Render("~/bundles/jQuery")
+
+
+    @*Nepali translator*@
+    <script src=@Url.Content("~/Scripts/NepaliTranslater1.js?ver=20210916")></script>
+    <!-- end: CORE CSS -->
+    <style>
+
+        ul.main-navigation-menu > li > a {
+            background-color: #0061a8;
+        }
+
+        .selected {
+            background-color: green;
+        }
+
+        .bad {
+            background-color: red;
+        }
+
+        #SearchBox {
+            padding-top: 12px !important;
+            left: 180px !important;
+        }
+
+        #pac-input {
+            height: 35px;
+        }
+    </style>
+
+</head>
+<!-- end: HEAD -->
+<!-- start: BODY -->
+<body class="">
+
+    <div id="ajaxLoaderDivBackground" class="hidden"></div>
+
+    <div class="main-wrapper">
+        <!-- start: PAGESLIDE LEFT -->
+        <a class="closedbar inner hidden-sm hidden-xs" href="#">
+        </a>
+        <!-- start: MAIN CONTAINER -->
+        <div class="main-container inner">
+            <!-- start: TOPBAR -->
+            <header class="topbar hidden-print" style="height:40px;">
+                <!-- start: TOPBAR CONTAINER -->
+                <div class="container" style="height:40px;padding-top:5px;">
+                    <div class="col-md-12 hidden-print row">
+                        <div class="">
+                            <div class="topbar-tools hidden-sm hidden-md" style="float:left; margin-top:5px;">
+                                <div style="margin-top:10px; width:auto">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- end: TOPBAR CONTAINER -->
+            </header>
+            <!-- end: TOPBAR -->
+            <!-- start: PAGE -->
+            <div class="navbar navbar-inverse navbar-fixed-top">
+                <div class="container">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        @Html.ActionLink("Demo Project", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                    </div>
+                </div>
+            </div>
+            <div class="main-content" id="ajax-content">
+                @RenderBody()
+            </div>
+        </div>
+
+        <!-- end: PAGE -->
+    </div>
+    <!-- end: MAIN CONTAINER -->
+    <!-- start: FOOTER -->
+    @*<footer class="inner">
+            <div class="footer-inner">
+                <div class="pull-left">
+
+
+
+                    @DateTime.Now.Year &copy; @ViewHelper.CompanyName
+                </div>
+                <div class="pull-right text-right">
+                    <span class="go-top pull-right"><i class="fa fa-chevron-up"></i></span>
+                    @ViewHelper.ApplicationName
+                    <br />
+                    A product of @ViewHelper.CompanyName
+                </div>
+            </div>
+        </footer>*@
+
+    <footer class="inner">
+        <div class="footer-inner">
+            <div class="col-sm-4">
+                <div class="" style="color:black; height:30px;">
+                </div>
+            </div>
+            <div class="col-sm-4">
+            </div>
+            <div class="col-sm-4 pull-right text-right">
+                <span class="go-top pull-right"><i class="fa fa-chevron-up"></i></span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- end: FOOTER -->
+    @*//for map*@
+
+
+    <script src="@Url.Content("~/Content/assets/plugins/jquery-ui/jquery-ui-1.10.2.custom.min.js")"></script>
+    <script src="@Url.Content("~/Content/assets/plugins/bootstrap/js/bootstrap.min.js")"></script>
+    <script src="@Url.Content("~/Content/assets/plugins/blockUI/jquery.blockUI.js")"></script>
+    <script src="@Url.Content("~/Content/assets/plugins/iCheck/jquery.icheck.min.js")"></script>
+    <script src="@Url.Content("~/Content/assets/plugins/moment/min/moment.min.js")"></script>
+    <script src="@Url.Content("~/Content/assets/plugins/perfect-scrollbar/src/jquery.mousewheel.js")"></script>
+    <script src="@Url.Content("~/Content/assets/plugins/perfect-scrollbar/src/perfect-scrollbar.js")"></script>
+    <script src="@Url.Content("~/Content/assets/plugins/bootbox/bootbox.min.js")"></script>
+    <script src="@Url.Content("~/Content/assets/plugins/jquery.scrollTo/jquery.scrollTo.min.js")"></script>
+    <script src="@Url.Content("~/Content/assets/plugins/ScrollToFixed/jquery-scrolltofixed-min.js")"></script>
+    <script src="@Url.Content("~/Content/assets/plugins/jquery.appear/jquery.appear.js")"></script>
+    <script src="@Url.Content("~/Content/assets/plugins/jquery-cookie/jquery.cookie.js")"></script>
+    <script src="@Url.Content("~/Content/assets/plugins/velocity/jquery.velocity.min.js")"></script>
+    <script src="@Url.Content("~/Content/assets/plugins/TouchSwipe/jquery.touchSwipe.min.js")"></script>
+    <!-- end: MAIN JAVASCRIPTS -->
+    <!-- start: JAVASCRIPTS REQUIRED FOR SUBVIEW CONTENTS -->
+    <script src="@Url.Content("~/Content/assets/plugins/owl-carousel/owl-carousel/owl.carousel.js")"></script>
+
+    <script src="@Url.Content("~/Content/assets/plugins/fullcalendar/fullcalendar/fullcalendar.min.js")"></script>
+    <script src="@Url.Content("~/Content/assets/plugins/bootstrap-switch/dist/js/bootstrap-switch.min.js")"></script>
+    <script src="@Url.Content("~/Content/assets/plugins/jquery.validate.min.js")"></script>
+    <script src="@Url.Content("~/Content/assets/plugins/bootstrap-fileupload/bootstrap-fileupload.min.js")"></script>
+    <script src="@Url.Content("~/Content/assets/plugins/DataTables/media/js/dataTables.fixedHeader.min.js")"></script>
+    <script src="@Url.Content("~/Content/assets/plugins/toggle/toggle.min.js")"></script>
+    <script src="@Url.Content("~/Content/assets/plugins/truncate/jquery.truncate.js")"></script>
+    <script src="@Url.Content("~/Content/assets/plugins/bootstrap-daterangepicker/daterangepicker.js")"></script>
+    <script src="@Url.Content("~/Content/assets/plugins/bootstrap-datepicker/js/bootstrap-datepicker.js")"></script>
+    <script src="@Url.Content("~/Content/assets/plugins/NepaliDatePick/nepali.datepicker.v2.1.min.js")"></script>
+    <script src="@Url.Content("~/Content/assets/plugins/summernote/summernote.min.js")"></script>
+    <script src="@Url.Content("~/Content/assets/plugins/summernote/summernote-cleaner.js")"></script>
+    <script src="@Url.Content("~/Content/assets/plugins/jquery-ui/jquery-ui-1.10.2.custom.min.js")"></script>
+    <script src="@Url.Content("~/Content/assets/plugins/jqueryFixedHeader/table-fixed-header.js")"></script>
+    <script src="@Url.Content("~/Content/assets/plugins/bootstrap-progressbar/bootstrap-progressbar.min.js")"></script>
+    <script src="@Url.Content("~/Content/assets/plugins/nvd3/lib/d3.v3.js")"></script>
+    <script src="@Url.Content("~/Content/assets/plugins/nvd3/nv.d3.min.js")"></script>
+
+    <script src="@Url.Content("~/Content/assets/plugins/select2/select2helper.js")"></script>
+    <script src="@Url.Content("~/Content/assets/plugins/select2/select2.min.js")"></script>
+    <script src="@Url.Content("~/Content/assets/plugins/select2/en.js")"></script>
+    <script src="@Url.Content("~/Scripts/form-wizard.js")"></script>
+    <script src="@Url.Content("~/Scripts/jquery.smartWizard.js")"></script>
+    <script src="@Url.Content("~/Content/assets/js/table-data.js")"></script>
+    <script src="@Url.Content("~/Content/assets/plugins/tableExport/tableExport.js")"></script>
+    <script src="@Url.Content("~/Content/assets/plugins/tableExport/jquery.base64.js")"></script>
+    <script src="@Url.Content("~/Content/assets/plugins/tableExport/html2canvas.js")"></script>
+    <script src="@Url.Content("~/Content/assets/plugins/sweetalert/lib/sweet-alert.min.js")"></script>
+    <script src="@Url.Content("~/Content/assets/plugins/tableExport/jspdf/libs/sprintf.js")"></script>
+    <script src="@Url.Content("~/Content/assets/plugins/tableExport/jspdf/jspdf.js")"></script>
+    <script src="@Url.Content("~/Content/assets/plugins/tableExport/jspdf/libs/base64.js")"></script>
+    <script src="@Url.Content("~/Content/assets/js/table-export.js")"></script>
+    <script src="@Url.Content("~/Content/assets/js/ui-modals.js")"></script>
+    <script src="@Url.Content("~/Content/assets/js/main.js?v=20220215")"></script>
+    <script src="@Url.Content("~/Content/assets/js/jquery.searchable-1.0.0.min.js")"></script>
+    <script src="@Url.Content("~/Scripts/startup.js?ver=20220828")"></script>
+
+    <!-- end: CORE JAVASCRIPTS  -->
+    <!--CreditAppraisal-->
+    <link href="@Url.Content("~/Content/dropzone.css")" rel="stylesheet" />
+    @*<script src="~/Scripts/CreditAppraisal/Miscellaneous.js"></script>
+
+        <script src="~/Scripts/CreditAppraisal/dropzone.js"></script>*@
+    <script src="@Url.Content("~/Scripts/bootstrap-timepicker.min.js")"></script>
+    <script src="@Url.Content("~/Scripts/IconPicker/bootstrap-iconpicker.min.js")"></script>
+    <script src="@Url.Content("~/Scripts/ToasterNotification/jquery.toaster.js")"></script>
+    <script src="@Url.Content("~/Scripts/TableEdit/jquery.tabledit.js")"></script>
+    <script src="@Url.Content("~/Scripts/PrintThis/printThis.js")"></script>
+    <script src="@Url.Content("~/Scripts/nepali.datepicker.v2.2/nepali.datepicker.v2.2.min.js")"></script>
+    @*<script src="~/Scripts/CreditAppraisal/ImageUpload.js"></script>*@
+    <script src="@Url.Action("Config","JavaScript")"></script>
+    <!--CreditAppraisal-->
+    <script src="~/Content/assets/js/form-validation.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+
+    <script src="~/Scripts/jquery.validate.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
+    <link href="~/Content/DataTables/css/buttons.dataTables.min.css" rel="stylesheet" />
+    <link href="~/Content/DataTables/css/jquery.dataTables.min.css" rel="stylesheet" />
+    <script src="@Url.Content("~/Scripts/DataTables/jquery.dataTables.min.js")"></script>
+    <script src="@Url.Content("~/Scripts/DataTables/dataTables.buttons.min.js")"></script>
+    <script src="@Url.Content("~/Scripts/DataTables/buttons.flash.min.js")"></script>
+    <script src="@Url.Content("~/Scripts/DataTables/jszip.min.js")"></script>
+    <script src="@Url.Content("~/Scripts/DataTables/buttons.html5.min.js")"></script>
+    <script src="@Url.Content("~/Scripts/DataTables/buttons.print.min.js")"></script>
+    <script src="@Url.Content("~/Scripts/UnicodeToPreetiConvert.js")"></script>
+    <script src="~/Scripts/bootstrap-colequalizer.js"></script>
+    <script src="@Url.Content("~/Scripts/GoolgeMapsInit.js")"></script>
+    <script src="@Url.Content("~/Scripts/postWithRemarks.js")"></script>
+    <script src="@Url.Content("~/Scripts/jquery.floatThead.js")"></script>
+    <script src="@Url.Content("~/Scripts/tableHeadFixer.js")"></script>
+
+
+    <script src="~/Scripts/angular.js"></script>
+    <script src="~/Scripts/CustomJS/app.js"></script>
+    <script src="~/Scripts/CustomJS/Student.js"></script>    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/danialfarid-angular-file-upload/12.2.13/ng-file-upload.min.js"></script>
+
+    @*for password strength*@
+    <script src="~/Scripts/password_strength.js"></script>
+    <script src="~/Scripts/password_strength_lightweight.js"></script>
+
+    <script>
+        $(document).ready(function ($) {
+            $('#myPassword').strength_meter();
+        });
+    </script>
+
+    <script>
+        $('.colequalizer').colequalizer();
+    </script>
+
+    <script>
+        $(document).ready(function (e) {
+            $('.main-navigation-menu a[href="#"]').each(function (item, index) {
+                var hasIcon = $(this).find('.fa');
+                if (hasIcon.length == 0) { $(this).prepend('<i class="fa fa-folder"></a>'); }
+            });
+            $('.main-navigation-menu a[href!="#"]').each(function (item, index) {
+                var hasIcon = $(this).find('.fa');
+                if (hasIcon.length == 0) { $(this).prepend('<i class="fa fa-list"></a>'); }
+            });
+        });
+    </script>
+
+
+    <script>
+        function NepaliDateInti() {
+            $('.nepali-calendar').nepaliDatePicker({
+
+                format: "yyyy-mm-dd",
+                npdMonth: true,
+                npdYear: true,
+                npdYearCount: 50
+            });
+
+            $('.nepali-calendar').attr('placeholder', 'yyyy-mm-dd');
+            $('.nepali-calendar').removeAttr('readonly');
+        }
+        $(document).ready(function () {
+            Main.init();
+            TableExport.init();
+            //UIModals.init();
+            // console.log('init...');
+            ReApplyDataTable();
+
+            applySelect();
+            NepaliDateInti();
+
+            $('#NepDate').on('mouseover', function (e) {
+                e.preventDefault();
+
+                $("#EngDate").toggle();
+
+            });
+            $('#NepDate').on('mouseout', function (e) {
+                e.preventDefault();
+
+                $("#EngDate").toggle();
+
+            });
+
+            $(document).on('keydown', 'input', function (e) {
+
+                var key = e.charCode ? e.charCode : e.keyCode ? e.keyCode : 0;
+                if (key == 13) {
+                    e.preventDefault();
+                    var inputs = $(this).closest('form').find(':input:visible');
+                    inputs.eq(inputs.index(this) + 1).focus();
+                }
+
+            });
+            $('.summernote').summernote({
+                height: 300,
+                codeviewFilterRegex: /<\/*(?:b(?:ase|gsound|link)|ilayer|l(?:ayer|ink)|object|style|t(?:itle|extarea)|xml)[^>]*?>/gi,
+                tabsize: 2,
+                oninit: function () {
+                    if (_thisNote.code() == "" || _thisNote.code().replace(/(<([^>]+)>)/ig, "") == "") {
+                        _thisNote.code(_thisNote.attr("placeholder"));
+                    }
+                },
+                onfocus: function (e) {
+                    if (_thisNote.code() == _thisNote.attr("placeholder")) {
+                        _thisNote.code("");
+                    }
+                },
+                onblur: function (e) {
+                    if (_thisNote.code() == "" || _thisNote.code().replace(/(<([^>]+)>)/ig, "") == "") {
+                        _thisNote.code(_thisNote.attr("placeholder"));
+                    }
+                },
+                cleaner: {
+                    action: 'both',
+                    newline: '<br>',
+                    icon: '<i class="note-icon">[Your Button]</i>',
+                    keepHtml: true,
+                    //keepOnlyTags: ['<p>', '<br>', '<ul>', '<li>', '<b>', '<strong>', '<i>', '<a>', '<table>', '<font>', '<span>', '<u>', '<th>', '<tr>', '<td>', '<img>', '<a>', '<html>', '<body>'], // If keepHtml is true, remove all tags except these
+                    keepClasses: false, //Remove Classes
+                    badTags: ['style', 'script', 'applet', 'embed', 'noframes', 'noscript'], //'html'], //Remove full tags with contents
+                    badAttributes: [], //['style', 'start'], //Remove attributes from remaining tags
+                    limitChars: false,
+                    limitDisplay: 'both',
+                    limitStop: false
+                }
+            });
+
+
+            //$('.summernote').each(function () {
+            //    var _thisNote = $(this);
+            //    $(this).summernote({
+
+            //    });
+            //});
+
+        });
+
+    </script>
+    @RenderSection("Scripts", false)
+    <script>
+        $.validator.setDefaults({
+            ignore: ""
+        });
+
+        //for menu
+        $(document).ready(function () {
+            // Code for Current Active Page to open node at left
+
+            var hjref = $(location).attr('href');
+            // console.log("Current Address of Active page" + hjref);
+            var pathname = $(location).attr('pathname');
+            //console.log("Current Path of Active page" + pathname);
+
+            $found = false;
+            $('.sub-menu li a').each(function (e) {
+                var hrefl = $(this).attr('href');
+                if (pathname == hrefl && $found == false) {
+                    $found = true;
+                    $(this).addClass("active");
+
+                    $parent = $(this).parents('li');
+                    $parent = $($parent.get().reverse());
+                    $parent.each(function () {
+                        console.log($(this));
+                        //$(this).find('> a').trigger('click'); //.addClass('open')
+                        $(this).addClass('open').children('ul').slideDown(5, function () {
+                            if (mainNavigation.height() > $(".main-navigation-menu").outerHeight()) {
+                                mainNavigation.scrollTo(0, 5, {
+                                    onAfter: function () {
+                                        if ($body.hasClass("isMobile") == false) {
+                                            mainNavigation.perfectScrollbar('update');
+                                        }
+                                    }
+                                });
+                            } else {
+                                mainNavigation.scrollTo($(this).parent("li"), 5, {
+                                    onAfter: function () {
+                                        if ($body.hasClass("isMobile") == false) {
+                                            mainNavigation.perfectScrollbar('update');
+                                        }
+                                    }
+                                });
+                            }
+                        });
+                    })
+                }
+            });
+
+            var openMenu = "@ViewBag.MenuID";
+            console.log(openMenu);
+
+            $('.trigOnLoad').each(function (item, index) {
+                $(this).trigger('click');
+            });
+        });
+        $(document).ready(function () {
+            $('.table-fixed-header').fixedHeader();
+
+
+        });
+
+        $('.datepicker').datepicker({
+            format: 'yyyy-mm-dd',
+            // "setDate": new Date(),
+            "autoclose": true
+            //startDate: '-3d'
+        });
+
+        $('.datepicker').attr('placeholder', 'yyyy-mm-dd');
+        $('.date-picker').attr('placeholder', 'yyyy-mm-dd');
+
+
+    </script>
+
+
+    <script>
+        $(document).on('change', '.map_data', function () {
+            var lng = $('#lon34map_lng').val();
+            var lat = $('#lon34map_lat').val();
+            var latlng = new google.maps.LatLng(lat, lng);
+            mark.setPosition(latlng);
+            map.setCenter(mark.position);
+
+            lng = $('#lon63map_lng').val();
+            lat = $('#lon63map_lat').val();
+            latlng = new google.maps.LatLng(lat, lng);
+            mark2.setPosition(latlng);
+            map2.setCenter(mark2.position);
+        });
+
+        function getMap(map_id, map_lat_id, map_lng_id) {
+            var lng = 0;
+            var lat = 0;
+            if (document.getElementById(map_lat_id) != null && document.getElementById(map_lat_id) != "") {
+                lat = document.getElementById(map_lat_id).value;
+            }
+            if (document.getElementById(map_lng_id) != null && document.getElementById(map_lng_id) != "") {
+                lng = document.getElementById(map_lng_id).value;
+            }
+            if (lat == 0) {
+                lat = 27.7054567;
+                lng = 85.3248698;
+            }
+
+            var myLatlng = new google.maps.LatLng(lat, lng);
+
+            var myOptions = {
+                zoom: 19,
+                center: myLatlng,
+            }
+
+            map = new google.maps.Map(document.getElementById(map_id), myOptions);
+
+            mark = new google.maps.Marker({
+                position: myLatlng,
+                map: map,
+            });
+
+        }
+    </script>
+</body>
+<!-- end: BODY -->
+</html>

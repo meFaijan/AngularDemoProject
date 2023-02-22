@@ -1,0 +1,111 @@
+﻿body {
+    /*padding-top: 50px;*/
+    padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/*err 7/18 added and commented*/
+/*.field-validation-error {
+    color: #e80c4d;
+    font-weight: bold;
+}
+
+.field-validation-valid {
+    display: none;
+}
+
+input.input-validation-error {
+    border: 1px solid #e80c4d;
+}
+
+.validation-summary-errors {
+    color: #e80c4d;
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+.validation-summary-valid {
+    display: none;
+}*/
+
+.Uppercase {
+    text-transform: uppercase;
+}
+
+
+.borderDottedSign {
+    border-top: 1px dotted #000 !important;
+}
+
+.italicItalic {
+    font-style: italic !important;
+}
+
+.page-break {
+    page-break-after: always;
+}
+
+.margin_for_header {
+    margin-left:40px;
+    margin-right:40px;
+    margin-top:100px;
+}
+
+#map {
+    position: inherit !important;
+    height: 500px;
+}
+
+
+.file-icon.file-ext-docx, .file-icon.file-ext-doc {
+    background-image: url(../../Content/assets/images/doc.png)
+}
+
+.file-icon.file-ext-xlsx, .file-icon.file-ext-xls {
+    background-image: url(../../Content/assets/images/xls.png)
+}
+
+
+.preeti_font {
+    font-family: Preeti !important;
+    font-size: 18px !important;
+}
+.preeti {
+    font-family: Preeti !important;
+    font-size: 18px !important;
+}
+
+
+.main-login .thumbnail {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.width_100px {
+    width: 100px !important;
+}
+
+.width_100px > a{
+    margin-bottom:5px !important;
+}
+
+.height_65px {
+    height:65px !important;
+}
+
+.toggle.btn{
+    width:100px !important;
+}

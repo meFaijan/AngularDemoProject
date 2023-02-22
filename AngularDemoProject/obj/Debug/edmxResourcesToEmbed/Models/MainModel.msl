@@ -1,0 +1,131 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="demo_projectModelStoreContainer" CdmEntityContainer="MainEntities">
+    <EntitySetMapping Name="academic_detail">
+      <EntityTypeMapping TypeName="demo_projectModel.academic_detail">
+        <MappingFragment StoreEntitySet="academic_detail">
+          <ScalarProperty Name="school_college_name" ColumnName="school_college_name" />
+          <ScalarProperty Name="gpa" ColumnName="gpa" />
+          <ScalarProperty Name="division" ColumnName="division" />
+          <ScalarProperty Name="obtained_percent" ColumnName="obtained_percent" />
+          <ScalarProperty Name="obtained_marks" ColumnName="obtained_marks" />
+          <ScalarProperty Name="symbol_no" ColumnName="symbol_no" />
+          <ScalarProperty Name="passout_year" ColumnName="passout_year" />
+          <ScalarProperty Name="exam" ColumnName="exam" />
+          <ScalarProperty Name="class" ColumnName="class" />
+          <ScalarProperty Name="student_id" ColumnName="student_id" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="categories">
+      <EntityTypeMapping TypeName="demo_projectModel.category">
+        <MappingFragment StoreEntitySet="category">
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="class_details">
+      <EntityTypeMapping TypeName="demo_projectModel.class_details">
+        <MappingFragment StoreEntitySet="class_details">
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="document_type">
+      <EntityTypeMapping TypeName="demo_projectModel.document_type">
+        <MappingFragment StoreEntitySet="document_type">
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="genders">
+      <EntityTypeMapping TypeName="demo_projectModel.gender">
+        <MappingFragment StoreEntitySet="gender">
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="login_details">
+      <EntityTypeMapping TypeName="demo_projectModel.login_details">
+        <MappingFragment StoreEntitySet="login_details">
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="login_year_type">
+      <EntityTypeMapping TypeName="demo_projectModel.login_year_type">
+        <MappingFragment StoreEntitySet="login_year_type">
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="religions">
+      <EntityTypeMapping TypeName="demo_projectModel.religion">
+        <MappingFragment StoreEntitySet="religion">
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="student_documents">
+      <EntityTypeMapping TypeName="demo_projectModel.student_documents">
+        <MappingFragment StoreEntitySet="student_documents">
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="file_name" ColumnName="file_name" />
+          <ScalarProperty Name="file_path" ColumnName="file_path" />
+          <ScalarProperty Name="document_type_id" ColumnName="document_type_id" />
+          <ScalarProperty Name="student_id" ColumnName="student_id" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="student_info">
+      <EntityTypeMapping TypeName="demo_projectModel.student_info">
+        <MappingFragment StoreEntitySet="student_info">
+          <ScalarProperty Name="sign_name" ColumnName="sign_name" />
+          <ScalarProperty Name="sign_path" ColumnName="sign_path" />
+          <ScalarProperty Name="image_name" ColumnName="image_name" />
+          <ScalarProperty Name="image_path" ColumnName="image_path" />
+          <ScalarProperty Name="physical_disability" ColumnName="physical_disability" />
+          <ScalarProperty Name="weight" ColumnName="weight" />
+          <ScalarProperty Name="height" ColumnName="height" />
+          <ScalarProperty Name="mother_tongue" ColumnName="mother_tongue" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="contact_no" ColumnName="contact_no" />
+          <ScalarProperty Name="blood_group" ColumnName="blood_group" />
+          <ScalarProperty Name="nationality" ColumnName="nationality" />
+          <ScalarProperty Name="category_id" ColumnName="category_id" />
+          <ScalarProperty Name="religion_id" ColumnName="religion_id" />
+          <ScalarProperty Name="birth_date" ColumnName="birth_date" />
+          <ScalarProperty Name="gender_id" ColumnName="gender_id" />
+          <ScalarProperty Name="last_name" ColumnName="last_name" />
+          <ScalarProperty Name="middle_name" ColumnName="middle_name" />
+          <ScalarProperty Name="first_name" ColumnName="first_name" />
+          <ScalarProperty Name="Admin_date" ColumnName="Admin_date" />
+          <ScalarProperty Name="grade_no" ColumnName="grade_no" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="student_relatives_details">
+      <EntityTypeMapping TypeName="demo_projectModel.student_relatives_details">
+        <MappingFragment StoreEntitySet="student_relatives_details">
+          <ScalarProperty Name="remarks" ColumnName="remarks" />
+          <ScalarProperty Name="relation" ColumnName="relation" />
+          <ScalarProperty Name="student_id" ColumnName="student_id" />
+          <ScalarProperty Name="class_id" ColumnName="class_id" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

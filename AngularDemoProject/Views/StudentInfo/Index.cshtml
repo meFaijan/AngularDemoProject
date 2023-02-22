@@ -1,0 +1,88 @@
+﻿@model IEnumerable<AngularDemoProject.Models.student_info>
+
+@{
+    ViewBag.Title = "Student :List";
+}
+
+<div class="container">
+    <div class="toolbar row">
+        <div class="col-sm-6 hidden-xs">
+            <div class="page-header">
+                <h1>
+                    Student
+                    <small>List</small>
+                </h1>
+            </div>
+        </div>
+        <div class="col-sm-6 col-xs-12">
+            <div class="toolbar-tools pull-right">
+                <ul class="nav navbar-right">
+                    <li class="back">
+                        <a href="@Url.Action("Create")">
+                            <i class="fa fa-plus"></i> Add New
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-12" ng-app="DemoApp" ng-controller="HomeController" data-ng-init="GetStudentList()">
+        <div class="panel panel-default">
+            <div class="panel panel-heading"></div>
+            <div class="panel-body">
+                <table class="table table-bordered dataTable">
+                    <thead>
+                        <tr>
+                            <th>SN</th>
+                            <th>Full Name</th>
+                            <th>Admit Date</th>
+                            <th>Birth Date</th>
+                            <th>Blood Group</th>
+                            <th>Category</th>
+                            <th>Gender</th>
+                            <th>Religion</th>
+                            <th>Grade No</th>
+                            <th>Nationality</th>
+                            <th>Contact No</th>
+                            <th>Email</th>
+                            <th>Mother Tongue</th>
+                            <th>Height</th>
+                            <th>Weight</th>
+                            <th>Physical Disability</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody ng-repeat="data in StudentList">
+                        <tr>
+                            <td>{{data.id}}</td>
+                            <td>{{data.FullName}}</td>
+                            <td>{{data.AdmitDate}}</td>
+                            <td>{{data.BirthDate}}</td>
+                            <td>{{data.blood_group}}</td>
+                            <td>{{data.Category}}</td>
+                            <td>{{data.Gender}}</td>
+                            <td>{{data.Religion}}</td>
+                            <td>{{data.grade_no}}</td>
+                            <td>{{data.nationality}}</td>
+                            <td>{{data.contact_no}}</td>
+                            <td>{{data.email}}</td>
+                            <td>{{data.mother_tongue}}</td>
+                            <td>{{data.height}}</td>
+                            <td>{{data.weight}}</td>
+                            <td>{{data.physical_disability}}</td>
+                            <td>
+                                <a class="btn btn-info btn-xs" ng-click="EditStudent($index)">
+                                    <i class="fa fa-edit"></i> Edit
+                                </a>
+                                <a class="btn btn-red btn-xs" ng-click="DeleteStudent($index)">
+                                    <i class="fa fa-times"></i> Remove
+                                </a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
